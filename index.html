@@ -314,7 +314,7 @@ body {
     <a href="leaderboard" class="button">Leaderboard</a>
     <a href="https://discord.gg/proll" class="button">Discord!</a>
     <a href="https://discord.gg/XnU8vBzAvK" class="button">(MY) Discord</a>
-    <a href="chat" class="button">Chatroom</a>
+    <a href="#" id="muteButton" class="button">Music</a>
 </div>
 
     
@@ -434,6 +434,26 @@ body {
     </footer>
 
     <script>
+            const audio = new Audio('assets/m.mp3');
+    const muteButton = document.getElementById('muteButton');
+    
+    function toggleAudio(event) {
+        if (event.target.tagName === 'BUTTON' || event.target.tagName === 'A') {
+            return;
+        }
+        if (audio.paused) {
+            audio.play().catch(function(error) {
+                console.log('🤓🤓🤓', error);
+            });
+        } else {
+            audio.pause();
+        }
+    }
+    
+    muteButton.addEventListener('click', function () {
+        audio.muted = !audio.muted;
+        muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
+    });
         // ===== FAVORITES FUNCTIONALITY =====
         // Get favorites from localStorage
         function getFavorites() {
