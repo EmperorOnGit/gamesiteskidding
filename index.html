@@ -12,6 +12,16 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <style>
+             #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            top: 0;
+            left: 0;
+            background-color: #000;
+        }
+        
         /* Adjust spacing for <br> */
         br {
             display: block;
@@ -256,19 +266,6 @@
     }
 }
 
-    <div id="particles-js"></div>
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80 },
-        size: { value: 3 },
-        move: { speed: 2 }
-      }
-    });
-    </script>
-
 /* Apply the glow effect to buttons when they fade in */
 .button-container.regular-games .button.glow-fade {
     animation: glowFadeIn 0.8s ease forwards;
@@ -276,6 +273,7 @@
     </style>
 </head>
 <body>
+    <div id="particles-js"></div> <!-- particles shit -->
     <div id="snow"></div> <!-- Snow effect container -->
 
     <div class="container">
@@ -759,4 +757,13 @@
         });
     </script>
 </body>
+    <script>
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 2 }
+  }
+});
+</script>
 </html>
