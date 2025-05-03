@@ -418,7 +418,15 @@ body {
         <button class="button"><a style="text-decoration:none" href='g/sandboxels' target="_blank"><img src="https://sandboxels.r74n.com/icons/icon.png" width="200" height="200" alt=""> <br>Sand Boxels</a></button>
     </div>
 
-  
+  <div id="music-button-container">
+    <button id="music-toggle">
+        <i class="fas fa-music"></i>
+    </button>
+    <audio id="background-music" loop>
+        <source src="m.mp3" type="audio/mpeg">
+        cant play
+    </audio>
+</div>
 
     <!-- Footer -->
     <footer>
@@ -434,26 +442,6 @@ body {
     </footer>
 
     <script>
-            const audio = new Audio('assets/m.mp3');
-    const muteButton = document.getElementById('muteButton');
-    
-    function toggleAudio(event) {
-        if (event.target.tagName === 'BUTTON' || event.target.tagName === 'A') {
-            return;
-        }
-        if (audio.paused) {
-            audio.play().catch(function(error) {
-                console.log('🤓🤓🤓', error);
-            });
-        } else {
-            audio.pause();
-        }
-    }
-    
-    muteButton.addEventListener('click', function () {
-        audio.muted = !audio.muted;
-        muteButton.textContent = audio.muted ? 'Unmute' : 'Mute';
-    });
         // ===== FAVORITES FUNCTIONALITY =====
         // Get favorites from localStorage
         function getFavorites() {
@@ -794,4 +782,23 @@ particlesJS('particles-js', {
   }
 });
 </script>
+    <script>
+        const music = document.getElementById("background-music");
+        const muteButton = document.getElementById("muteButton");
+        let isPlaying = false;
+    
+        muteButton.addEventListener("click", function (e) {
+            e.preventDefault(); // thing
+    
+            if (isPlaying) {
+                music.pause();
+                muteButton.textContent = "Music";
+            } else {
+                music.play();
+                muteButton.textContent = "Music";
+            }
+    
+            isPlaying = !isPlaying;
+        });
+    </script>
 </html>
