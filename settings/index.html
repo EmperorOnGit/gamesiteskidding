@@ -922,56 +922,52 @@
         </div>
     </div>
 
-    <script>
-    function enableAboutBlank() {
-        const currentURL = window.location.href;
-        const blankWindow = window.open('about:blank');
-        if (!blankWindow) return;
-        const iframe = blankWindow.document.createElement('iframe');
-        iframe.src = currentURL;
-        iframe.style = `
-            width: 100%;
-            height: 100%;
-            border: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-        `;
-        blankWindow.document.body.style.margin = '0';
-        blankWindow.document.body.style.padding = '0';
-        blankWindow.document.body.appendChild(iframe);
-        blankWindow.document.title = 'Blank Page';
-    }
+<script>
+function openInAboutBlank(url) {
+    const blankWindow = window.open('about:blank');
+    if (!blankWindow) return;
 
-    function openInAboutBlank(url) {
-        const blankWindow = window.open('about:blank');
-        if (!blankWindow) return;
-        const iframe = blankWindow.document.createElement('iframe');
-        iframe.src = url;
-        iframe.style = `
-            width: 100%;
-            height: 100%;
-            border: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-        `;
-        blankWindow.document.body.style.margin = '0';
-        blankWindow.document.body.style.padding = '0';
-        blankWindow.document.body.appendChild(iframe);
-        blankWindow.document.title = 'Blank Page';
-    }
+    const iframe = blankWindow.document.createElement('iframe');
+    iframe.src = url;
+    iframe.style = `
+        width: 100%;
+        height: 100%;
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+    `;
 
-    document.getElementById('enableAboutBlank').addEventListener('click', function() {
-        enableAboutBlank();
+    blankWindow.document.body.style.margin = '0';
+    blankWindow.document.body.style.padding = '0';
+    blankWindow.document.body.appendChild(iframe);
+    blankWindow.document.title = 'Blank Page';
+}
+
+function enableAboutBlank() {
+    openInAboutBlank(window.location.href);
+}
+
+document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openInAboutBlank(this.href);
     });
+});
 
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            openInAboutBlank(this.href);
-        });
+document.querySelectorAll('button[data-href]').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const url = this.getAttribute('data-href');
+        if (url) {
+            openInAboutBlank(url);
+        }
     });
+});
+
+document.getElementById('enableAboutBlank')?.addEventListener('click', function() {
+    enableAboutBlank();
+});
 </script>
 
     <script>
