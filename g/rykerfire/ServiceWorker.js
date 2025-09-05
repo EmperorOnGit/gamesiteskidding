@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-My project-1.0";
 const contentToCache = [
-    "Build/ryk.loader.js",
-    "Build/ryk.framework.js",
-    "Build/ryk.data",
-    "Build/ryk.wasm",
+    "Build/rykerfire.loader.js",
+    "Build/rykerfire.framework.js",
+    "Build/rykerfire.data",
+    "Build/rykerfire.wasm",
     "TemplateData/style.css"
 
 ];
