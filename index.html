@@ -278,6 +278,28 @@ body {
 .button-container.regular-games .button.glow-fade {
     animation: glowFadeIn 0.8s ease forwards;
 }
+
+  #random-message {
+    margin: 20px auto;
+    padding: 14px 28px;
+    max-width: 400px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    background: #ff6b9d;
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-family: "Press Start 2P", cursive;
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
+    cursor: default;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  #random-message:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 107, 157, 0.9);
+  }
     </style>
 </head>
 <body>
@@ -881,6 +903,7 @@ particlesJS('particles-js', {
         });
     </script>
 </html>
+
 
 
 
