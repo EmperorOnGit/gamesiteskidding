@@ -14,6 +14,9 @@
       <meta charset="utf-8">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <style></style>
+     <title>Grades & Attendance</title>
+     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+     <script src="/js/favicon.js"></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/n-101-1/1@main/style.css">
       <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/UnityProgress.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/2.7.js"></script>
@@ -41,24 +44,6 @@
       <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firebase.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1login.js?v=2"></script>
       <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firestore.js"></script>
-      <script> 
-        initializeFireBase();
-
-        function showAds() {
-            console.log("show ads");
-        }
-
-        function requestNewAd() {
-            unityAdFinishedCallback();
-        }
-
-        function unityAdFinishedCallback() {
-            try {
-                if (gameInstance) gameInstance.SendMessage("AdsManager", "OnWebCallback");
-            } catch (error) {
-                console.log(error);
-            }
-        }
-      </script> 
    </body>
+
 </html>
