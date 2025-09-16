@@ -287,11 +287,12 @@ body {
     <div class="container">
         <br></br>
         <h1>game site skidded (rel)</h1>
+        <div id="random-message">message...</div>
         <marquee behavior="scroll" direction="left" scrollamount="25">
             <img src="assets/d.png" alt="">
         </marquee>
         <br><br>
-        <a>I fixexded the 1v1.lol and webbrowseer 😎😎 also added some other new fun things 👍👍👍</a>
+        <a>big updatee 😎😎😎</a>
         </center><br></br>
         <center>
             <a>Time Spent: </a><span id="timeSpent">Loading...</span>
@@ -440,6 +441,85 @@ body {
         </center>
     </footer>
 
+        <script>
+        // messagees thingy
+        const messages = [
+          "gaming mode activated",
+          "Made with ❤️ gangalalngagng",
+          "Hospooot nooo",
+          "Whoa cool message",
+          "https://dsc.gg/zxsgames",
+          "hellow to mi minecraft server",
+          "i eat rocks",
+          "Minimize this menu bro",
+          "i love gamer gaming",
+          "hawk tuah",
+          "ymntrgbefvdwcsax",
+          "noo gambling is very good -evilcy",
+          "i bet your reading this",
+          "f student activities",
+          "germain stair",
+          "get off your chromebook blud",
+          "gyatt",
+          "815 monique lane phonk",
+          "mango mango",
+          "also try petezah games",
+          "you got slimed my matsu",
+          "We HaVe ThE BeST gAmEs OuT thErE!",
+          "3.0",
+          "when is the period over?",
+          "76",
+          "techno pls add gooning vm",
+          "job",
+          "running out of ideas to put here",
+          "whos a good boy",
+          "you were struck down by divine judgement",
+          "dtme",
+          "i love school",
+          "reeell powerschoool!! 💯💯",
+          "dont use this in school guys",
+          "me when 1 new kajig",
+          "also try blooket",
+          "blooket battle pass",
+          "bunt tea",
+          "zin yeald",
+          "i am high",
+          "ERROR 401 Cannot find 67 🤖🤖",
+          "asdasdasdqwe",
+          "yes I am going to be gatekeeping a public software",
+          "me when no hollow knight silksong",
+          "is it just me or am i the only one with a semi working vm",
+          "its just u",
+          "ok then",
+          "MUUSTARDDDDDDDDD",
+          "when.com",
+          "https://youtube.com",
+          "if interstellar owner sees this he has to partner",
+          "shoutout to my boy yazeed for gyatt",
+          "i love nerds gummy clusters",
+          "im writing these during a test session lol",
+          "dont try comet v2",
+          "idk why tho",
+          "i love crayola",
+          "</3",
+          "i know everyone wants goooning vm",
+          "chompanzee banonie nenie",
+          "keep tjis site niche 🙏🙏",
+          "uhhh idk 😭",
+        ];
+
+        function displayRandomMessage() {
+          const randomIndex = Math.floor(Math.random() * messages.length);
+          const el = document.getElementById("random-message");
+          if (el) el.textContent = messages[randomIndex];
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          displayRandomMessage();
+          setInterval(displayRandomMessage, 13000);
+        });
+    </script>
+    
     <script>
         // ===== FAVORITES FUNCTIONALITY =====
         // Get favorites from localStorage
@@ -801,6 +881,7 @@ particlesJS('particles-js', {
         });
     </script>
 </html>
+
 
 
 
