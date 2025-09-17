@@ -1,18 +1,8 @@
 <!DOCTYPE html>
-
-
-<!-- Ultimate Game Stash file--> 
-<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
-
-
-<base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@e4eef50361d9e575bc7cd834e14388c6e675a67e/steal%20brainrot/">
 <html lang="en-us">
-
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="./style.css" /> 
     <script src="https://abud1234.netlify.app/js/favicon.js"></script>
     <script src="https://abud1234.netlify.app/js/panic.js"></script>
     <script src="https://abud1234.netlify.app/js/timeTracker.js" defer></script>
@@ -22,9 +12,29 @@
     <title>Grades & Attendence</title>
     <link rel="icon" type="image/x-icon" href="https://abud1234.netlify.app/images/favicon.png">
   <link rel="shortcut icon" href="https://abud1234.netlify.app/images/favicon.png">
-  <!-- Yandex Games SDK -->
-  <body>
-    <div class="game" style="height: calc(100% - 107px); width: calc(100% - 300px);"><iframe allow="accelerometer; gyroscope;" data-allowed-origins="[&quot;https://app-447526.games.s3.yandex.net&quot;,&quot;https://yandex.com&quot;]" data-origin-src="https://app-447526.games.s3.yandex.net/447526/8vavj1imvo3hd9p5k1xun7h76dqn4tef_brotli/index.html?sdk=%2Fsdk%2F_%2Fv2.5ddce4b9c48becfd69fe.js#origin=https%3A%2F%2Fyandex.com&amp;app-id=447526&amp;device-type=desktop" id="game-frame" name="1758074133415820-5738738932235923588-balancer-l7leveler-kubr-yp-sas-226-BAL" src="https://app-447526.games.s3.yandex.net/447526/8vavj1imvo3hd9p5k1xun7h76dqn4tef_brotli/index.html?sdk=%2Fsdk%2F_%2Fv2.5ddce4b9c48becfd69fe.js#origin=https%3A%2F%2Fyandex.com&amp;app-id=447526&amp;device-type=desktop"></iframe></div>
-  </body>
 
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    .game, #game-frame {
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="game">
+    <iframe 
+      allow="accelerometer; gyroscope;" 
+      id="game-frame" 
+      src="https://app-447526.games.s3.yandex.net/447526/8vavj1imvo3hd9p5k1xun7h76dqn4tef_brotli/index.html?sdk=%2Fsdk%2F_%2Fv2.5ddce4b9c48becfd69fe.js#origin=https%3A%2F%2Fyandex.com&amp;app-id=447526&amp;device-type=desktop">
+    </iframe>
+  </div>
+</body>
 </html>
