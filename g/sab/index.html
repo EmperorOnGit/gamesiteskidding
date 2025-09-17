@@ -509,36 +509,28 @@ document.addEventListener('DOMContentLoaded', (e) => { try { alertLogo("120",{to
 </script>
 
 <!-- Loader options + kick-off: keep names/data you used earlier -->
-<script>
-  var options = {
-    author: "8Games.net",
-    logo: "logo.jpg",
-    gameName: "Укради Брейнрот Оригинал 3Д",
-    gameNameEu: "Steal a Brainrot Original 3D",
-    gameUrl: "49442",
-    moreLink: "https://8games.net",
-    allowFullscreen: true,
-    locale: "ru_RU",
-    loader: "unity2020",
-    loaderOptions: {
-      unityLoaderUrl: "Build/StealBrainrot.loader.js",
-      unityConfigOptions: {
-        dataUrl: "Build/d6ccccaf266bab16bf58f5725e76504e.data.br",
-        frameworkUrl: "Build/8b2e24a34eb309de7efc1aeb6e648233.js",
-        codeUrl: "Build/b7cf28e445ff2ecea47d5697909bb345.wasm.br",
-        streamingAssetsUrl: "StreamingAssets"
-      }
-    },
-  };
-  try {
-    if (typeof GameInit !== 'undefined' && GameInit.load) {
-      GameInit.load(options);
-    } else {
-      console.warn('GameInit loader not found. Ensure /lib/game-loader/gameloader2020.js loaded successfully.');
-    }
-  } catch (e) {
-    console.error('Failed to start GameInit.load:', e);
-  }
-</script>
+  <script>
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/StealBrainrot.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/d6ccccaf266bab16bf58f5725e76504e.data.br",
+      frameworkUrl: buildUrl + "/8b2e24a34eb309de7efc1aeb6e648233.js",
+      codeUrl: buildUrl + "/b7cf28e445ff2ecea47d5697909bb345.wasm.br",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Steal Brainrot",
+      productVersion: "1.0",
+    };
+
+    var canvas = document.querySelector("#unity-canvas");
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
 </body>
 </html>
