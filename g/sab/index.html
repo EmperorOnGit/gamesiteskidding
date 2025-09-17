@@ -508,15 +508,14 @@ function OpenAuthDialog() {
 document.addEventListener('DOMContentLoaded', (e) => { try { alertLogo("120",{top:"5px",left:"5px"}); } catch(e){} });
 </script>
 
-<!-- Loader options + kick-off: keep names/data you used earlier -->
   <script>
-    var buildUrl = "Build";
+    var buildUrl = "https://st.8games.net/9/8g/igra-ukradi-brejnrot-original-3d/Build";
     var loaderUrl = buildUrl + "/StealBrainrot.loader.js";
     var config = {
       dataUrl: buildUrl + "/d6ccccaf266bab16bf58f5725e76504e.data.br",
       frameworkUrl: buildUrl + "/8b2e24a34eb309de7efc1aeb6e648233.js",
       codeUrl: buildUrl + "/b7cf28e445ff2ecea47d5697909bb345.wasm.br",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: buildUrl + "/StreamingAssets",
       companyName: "DefaultCompany",
       productName: "Steal Brainrot",
       productVersion: "1.0",
@@ -528,6 +527,7 @@ document.addEventListener('DOMContentLoaded', (e) => { try { alertLogo("120",{to
     script.onload = () => {
       createUnityInstance(canvas, config).catch((message) => {
         alert(message);
+        console.error(message);
       });
     };
     document.body.appendChild(script);
