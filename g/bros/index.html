@@ -109,7 +109,52 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             height: 320px;
             border-radius: 8px;
         }
+      .button-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+        justify-content: center;
+            text-decoration: none;
+      }
+      .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        padding: 15px 20px; /* Enlarge the padding */
+        background-color: #1B33EB; /* Darker gray button color */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        max-width: 200px;
+        width: 100%;
+      }
+      .button:hover {
+        background-color: #333;
+            text-decoration: none;
+      }
+      .button img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+        text-decoration: none;
+      }
+      .button  {
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+      }
+      .button-container1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; 
+    }
     </style>
+<button class="button"><a style="text-decoration:none" href="/index.html">Go Back</a></button>
 <link href="https://fonts.googleapis.com/" rel="preconnect"><link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="true"><link href="files/css" type="text/css" rel="stylesheet"></head>
 <body>
     <div class="container">
